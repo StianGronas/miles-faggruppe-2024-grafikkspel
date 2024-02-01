@@ -30,15 +30,17 @@ scene.add(sun);
 scene.add(earthOrbitNode);
 earthOrbitNode.add(earth);
 
-camera.position.z = 40;
+camera.position.z = 30;
 camera.position.y = 10;
 camera.rotation.y = 0;
 camera.rotation.x = -0.2;
 
+const speed = 1;
+
 const rotateObject = (object: THREE.Object3D, rotation: [number, number, number]) => {
-  object.rotation.x += rotation[0];
-  object.rotation.y += rotation[1];
-  object.rotation.z += rotation[2];
+  object.rotation.x += rotation[0] * speed;
+  object.rotation.y += rotation[1] * speed;
+  object.rotation.z += rotation[2] * speed;
 }
 
 function animate() {
