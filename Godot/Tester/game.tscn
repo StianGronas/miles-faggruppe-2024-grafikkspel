@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://cddvcditsdlim"]
+
+[ext_resource type="Script" path="res://scripts/Sun.cs" id="1_4svmj"]
+[ext_resource type="Texture2D" uid="uid://cgposkk4bqy42" path="res://assets/sun.jpg" id="1_xmaru"]
+[ext_resource type="Texture2D" uid="uid://3wvql15kgxx8" path="res://assets/earth_daymap.jpg" id="2_d02od"]
+[ext_resource type="Script" path="res://scripts/Earth.cs" id="2_xl8i2"]
+[ext_resource type="Script" path="res://scripts/EarthNode.cs" id="3_2yhqb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5v50s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t06va"]
+albedo_texture = ExtResource("1_xmaru")
+emission_enabled = true
+emission_energy_multiplier = 1.54
+
+[sub_resource type="SphereMesh" id="SphereMesh_r2kcs"]
+
+[sub_resource type="Environment" id="Environment_1nao5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ar8f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbyhr"]
+albedo_texture = ExtResource("2_d02od")
+
+[sub_resource type="SphereMesh" id="SphereMesh_m3moc"]
+
+[node name="Game" type="Node3D"]
+
+[node name="Sun" type="StaticBody3D" parent="."]
+script = ExtResource("1_4svmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sun"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("SphereShape3D_5v50s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sun"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_t06va")
+mesh = SubResource("SphereMesh_r2kcs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sun"]
+light_energy = 2.981
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0327006, -0.584618, 0.81065, 0.0235636, 0.811309, 0.584143, -0.999187, 9.83892e-15, 0.040306, 33.9708, 17.5859, 0.00523567)
+environment = SubResource("Environment_1nao5")
+
+[node name="EarthNode" type="Node3D" parent="."]
+script = ExtResource("3_2yhqb")
+
+[node name="Earth" type="StaticBody3D" parent="EarthNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6034, 0, 0)
+script = ExtResource("2_xl8i2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EarthNode/Earth"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_0ar8f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EarthNode/Earth"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fbyhr")
+mesh = SubResource("SphereMesh_m3moc")
