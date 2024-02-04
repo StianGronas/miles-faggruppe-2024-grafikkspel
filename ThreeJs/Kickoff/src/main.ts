@@ -37,6 +37,16 @@ camera.rotation.x = -0.2;
 
 const speed = 1;
 
+// const skyboxGeo = new THREE.SphereGeometry(100, 64, 64);
+// const skyboxMat = new THREE.MeshBasicMaterial({
+//   map: new THREE.TextureLoader().load('src/assets/back.jpg'),
+//   fog: false,
+//   side: THREE.BackSide,
+// });
+// const skyboxMesh = new THREE.Mesh(skyboxGeo, skyboxMat);
+
+// scene.add(skyboxMesh);
+
 const rotateObject = (object: THREE.Object3D, rotation: [number, number, number]) => {
   object.rotation.x += rotation[0] * speed;
   object.rotation.y += rotation[1] * speed;
