@@ -1,0 +1,11 @@
+{
+  "name": "landscapes_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Kristoffer Dyrkorn",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.152.2"
+  }
+}

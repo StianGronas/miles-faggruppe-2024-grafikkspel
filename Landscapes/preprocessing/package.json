@@ -1,0 +1,17 @@
+{
+  "name": "landscapes_preprocessing",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Kristoffer Dyrkorn",
+  "license": "MIT",
+  "dependencies": {
+    "@kylebarron/snap-to-tin": "^0.2.1",
+    "bvh-tree-plus": "^1.0.2",
+    "delatin": "^0.2.0",
+    "earcut": "^2.2.4",
+    "geotiff": "^2.0.7",
+    "gltfpack": "^0.19.1",
+    "proj4": "^2.9.0",
+    "sharp": "^0.32.2"
+  }
+}

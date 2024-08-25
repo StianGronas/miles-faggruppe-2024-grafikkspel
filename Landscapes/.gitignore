@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+*.glb
+*.tif
+*.obj
+*.exe
+preprocessing/buildings/*
+Thumbs.db
