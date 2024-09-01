@@ -19,7 +19,6 @@ if (process.argv.length != 8) {
 
   for (let y = tileMin[1]; y <= tileMax[1]; y++) {
     for (let x = tileMin[0]; x <= tileMax[0]; x++) {
-      // TODO Paralell (ex. 10 at a time)
       const url = `https://a.data.osmbuildings.org/0.2/${osmKey}/tile/15/${x}/${y}.json`;
       console.log("Downloading", url);
 
@@ -29,7 +28,8 @@ if (process.argv.length != 8) {
 
       fs.writeFileSync(outputFile, jsonText);
 
-      await sleep(2000);
+      // Reduced from 2000 to 500
+      await sleep(500);
     }
   }
 }

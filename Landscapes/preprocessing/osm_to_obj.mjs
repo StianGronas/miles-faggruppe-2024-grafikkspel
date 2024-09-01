@@ -25,12 +25,19 @@ function toUTM33(coordinates) {
 function createWalls(groundVertices, roofVertices) {
   const wallVertices = [];
   for (let i = 0; i < groundVertices.length - 1; i++) {
-    wallVertices.push(groundVertices[i + 1]);
-    wallVertices.push(groundVertices[i]);
-    wallVertices.push(roofVertices[i + 1]);
-    wallVertices.push(roofVertices[i + 1]);
-    wallVertices.push(groundVertices[i]);
+    // wallVertices.push(groundVertices[i + 1]);
+    // wallVertices.push(groundVertices[i]);
+    // wallVertices.push(roofVertices[i + 1]);
+    // wallVertices.push(roofVertices[i + 1]);
+    // wallVertices.push(groundVertices[i]);
+    // wallVertices.push(roofVertices[i]);
+    // Reversed vertices order to fix normals
     wallVertices.push(roofVertices[i]);
+    wallVertices.push(groundVertices[i]);
+    wallVertices.push(roofVertices[i + 1]);
+    wallVertices.push(roofVertices[i + 1]);
+    wallVertices.push(groundVertices[i]);
+    wallVertices.push(groundVertices[i + 1]);
   }
   return wallVertices;
 }
