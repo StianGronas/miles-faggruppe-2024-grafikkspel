@@ -1,6 +1,8 @@
 # Info
 Fork av https://github.com/kristoffer-dyrkorn/landscapes
 
+**FOR FAGGRUPPA -> BRUK WIKI-SIDA HELLER**
+
 Rest of original README below:
 
 ---

@@ -4,5 +4,6 @@ node_modules
 *.tif
 *.obj
 *.exe
+*.png
 preprocessing/buildings/*
 Thumbs.db
